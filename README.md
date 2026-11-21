@@ -40,15 +40,15 @@ Datheon_Machine_Learning_&_Data_Science_Internship/
 ### Task 2: Regression Modeling on California Housing Data
 
 #### Key Discoveries
-* **Continuous Target Modeling Across Housing Features:** Analyzed relationships between housing/demographic attributes and continuous median house values using regression models (including Ordinary Least Squares and regularized linear models such as Ridge and Lasso where applicable).
+* **Continuous Target Modeling Across Housing Features:** Analyzed relationships between housing/demographic attributes and continuous house prices using regression models (including Ordinary Least Squares and regularized linear models such as Ridge and Lasso where applicable).
+* **Target Price Capping / Ceiling Effect:** Discovered that house prices in the dataset are capped at an upper limit, creating an artificial ceiling where high-value properties get clipped rather than scaling freely—which can compress upper-end predictions and affect residual patterns.
 * **Impact of Feature Scaling & Regularization:** Features on different numeric scales or correlated predictors can cause unstable weights or overfitting in unregularized linear models, whereas scaling and regularization (`alpha` tuning) help control model complexity and coefficient behavior.
-* **Multi-Metric & Visual Evaluation:** Evaluating regression performance requires looking at error metrics and residual/prediction behavior together rather than relying on a single score.
+* **Multi-Metric & Visual Evaluation:** Evaluating regression performance requires looking at error metrics and residual/prediction diagnostics together rather than relying on a single score.
 
 #### Problems Faced & How They Were Addressed
+* **Price Capping Distortion:** Because upper-end prices hit a cap, models can underpredict or flatten near the ceiling and show systematic residuals on high-priced homes; noting this cap during EDA and error inspection prevented misinterpreting ceiling behavior as pure model failure.
 * **Scale Mismatches & Overfitting Risk:** Wrapping preprocessing (such as scaling) and regression estimators cleanly inside pipelines and tuning regularization parameters helped prevent uneven feature dominance and over-reliance on noise.
 * **Distinguishing Fit from Generalization:** Comparing model performance across splits and checking prediction errors highlighted where models overfit versus where linear assumptions had natural limits.
-
----
 
 ### Task 3: Binary Classification for Customer Churn
 
